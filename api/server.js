@@ -15,14 +15,6 @@ server.use(function (req, res, next) {
 
 server.use(middlewares);
 
-// Optional rewrites
-server.use(
-  jsonServer.rewriter({
-    "/api/*": "/$1",
-    "/blog/:resource/:id/show": "/:resource/:id",
-  })
-);
-
 server.use(router);
 
 server.listen(3001, () => {
